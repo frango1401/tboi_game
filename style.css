@@ -1,0 +1,62 @@
+/* --- VARIÁVEIS E TEMA --- */
+:root {
+    --bg: #e9e3ef;
+    --fg: #2a1f36;
+    --box: #d6cbe0;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #120d1a;
+        --fg: #e8dff2;
+        --box: #241a30;
+    }
+}
+
+:root[data-theme="dark"] {
+    --bg: #120d1a;
+    --fg: #e8dff2;
+    --box: #241a30;
+}
+
+/* --- ESTILOS GERAIS --- */
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 15px/1.5 Georgia, "Times New Roman", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 22px;
+    margin: 14px 0 2px;
+    letter-spacing: .5px;
+}
+
+p {
+    margin: 0 0 10px;
+    max-width: 60ch;
+    text-align: center;
+    padding: 0 12px;
+    opacity: .85;
+}
+
+canvas {
+    width: min(100%, 960px);
+    aspect-ratio: 416/280;
+    image-rendering: pixelated;
+    background: #000;
+    display: block;
+    touch-action: none;
+}
